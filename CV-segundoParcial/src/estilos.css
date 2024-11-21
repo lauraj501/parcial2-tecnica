@@ -1,0 +1,269 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #f4f4f4;
+    padding: 20px;
+    position: relative;
+}
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*incluye el borde y relleno en el ancho y alto total*/
+}
+
+nav {
+    background-color: #fcfcfc;
+    padding: 1rem;
+    position: relative;
+}
+
+.nav-brand {
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    text-decoration: none; /*elimina subrayado*/
+    font-weight: bold; /*fuente negrita*/
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-btn {
+    color: rgb(0, 0, 0);
+    float: right;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.nav-menu {
+    display: none;
+    list-style: none;
+    clear: both;
+    padding-top: 1rem;
+}
+
+#menu-toggle:checked ~ .nav-menu {
+    display: block;
+}
+
+.nav-menu li {
+    margin: 1rem 0;
+    position: relative;
+}
+
+.nav-menu a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: block;
+}
+
+/* Submenu styles */
+.submenu {
+    display: none;
+    list-style: none;
+    background-color: #d6cbf5;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+/* Mobile submenu */
+.nav-menu li:hover .submenu,
+.nav-menu li:focus-within .submenu {
+    display: block;
+}
+
+.submenu li {
+    margin: 0.5rem 0;
+}
+
+.submenu a {
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
+.nav-menu a:hover,
+.submenu a:hover {
+    color: #ddd;
+}
+
+/* Desktop styles */
+@media screen and (min-width: 768px) {
+    .menu-btn {
+        display: none;
+    }
+
+    .nav-menu {
+        display: flex;
+        padding-top: 0;
+        float: right;
+        clear: none;
+    }
+
+    .nav-menu > li {
+        margin: 0 0 0 1.5rem;
+    }
+
+    /* Desktop submenu */
+    .submenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 200px;
+        margin-top: 0.5rem;
+    }
+
+    .nav-menu > li:hover .submenu {
+        display: block;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.intro {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 40px; 
+}
+
+.foto-perfil {
+    border-radius: 10px;
+    width: 200px; /* Ancho en pantallas grandes */
+    height: 200px; /* Altura en pantallas grandes */
+    display: block; 
+    margin: 0 auto; 
+    object-fit: cover; 
+}
+
+.cta {
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+main {
+    padding: 5% 20px;
+}
+
+section {
+    padding: 2%;
+    margin: 4%;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-top: 1%; 
+}
+
+section p {
+    margin-bottom: 15px; 
+}
+
+/* Estilos para la sección de habilidades */
+.habilidades {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite que los artículos se ajusten en varias filas */
+}
+
+.habilidades-profesionales, .habilidades-blandas {
+    width: 45%; /* Ancho en pantallas grandes */
+    margin-bottom: 20px; /* Espacio entre secciones */
+}
+
+.habilidades ul {
+    list-style-type: square;
+    padding-left: 20px; 
+}
+
+/* Media Queries para dispositivos pequeños */
+@media screen and (max-width: 480px) {
+    .foto-perfil {
+        width: 200px; 
+        height: 200px; 
+    }
+
+    .habilidades {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        align-items: center; /* Centra los artículos */
+    }
+
+    .habilidades-profesionales, .habilidades-blandas {
+        width: 100%; /* Asegura que ocupen el ancho completo en móviles */
+    }
+
+    main {
+        padding: 5% 10px; /* Reduce el padding lateral */
+    }
+
+    section {
+        margin: 2%; /* Reduce el margen */
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 10px 0 5px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#botonEnviar {
+    background-color: rgb(188, 188, 201); 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s; 
+}
+
+#botonEnviar:hover {
+    background-color: #007BFF; /*cambia el color al presionar el boton*/
+}
+
+footer {
+    background: #bbc1f8;
+    color: rgb(73, 72, 72);
+    text-align: center;
+    padding: 10px 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.social-icons {
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    color: rgb(73, 72, 72);
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 24px; 
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #007BFF; 
+}
